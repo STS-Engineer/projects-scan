@@ -3,7 +3,7 @@ const cron = require('node-cron');
 const { runReports } = require('./jobs/report.job');
 
 // Run all reports at 08:00 daily
-cron.schedule('50 10 * * *', async () => {
+cron.schedule('58 10 * * *', async () => {
   console.log('⏰ Scheduled report job started');
 
   try {
