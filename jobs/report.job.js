@@ -1,6 +1,6 @@
 const scanConfig = require('../config/scanConfig');
 const { scanTable } = require('../services/dbScanner.service');
-const { generateHTMLReport, generateprojectsReport } = require('../services/report.service');
+const { generateHTMLReport} = require('../services/report.service');
 const { sendReportEmail } = require('../services/email.service');
 
 // Single unified function to run all reports
@@ -14,9 +14,7 @@ const runReports = async () => {
       let html;
       if (report.db === 'CUSTOMER_INTERACTION') {
         html = generateHTMLReport(report.reportName, rows);
-      } else if (report.db === 'PROJECTS_DB') {
-        html = generateprojectsReport(report.reportName, rows);
-      }
+      } 
 
       // Send email
       await sendReportEmail({
