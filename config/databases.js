@@ -9,5 +9,6 @@ const databases = {
     port: 5432,
     ssl: { rejectUnauthorized: false }
   })
+};
 
 module.exports = databases;
