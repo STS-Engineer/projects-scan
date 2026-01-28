@@ -10,6 +10,4 @@ const databases = {
     ssl: { rejectUnauthorized: false }
   })
 
-
-
 module.exports = databases;
