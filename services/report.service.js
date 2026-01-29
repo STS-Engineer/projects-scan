@@ -768,7 +768,7 @@ const generateHTMLReport = (title, rows) => {
                   <tr>
                     <td align="center">
                       <a 
-                        href="http://localhost:3000/conversation/${row.id}"
+                        href="https://db-scan.azurewebsites.net/conversation/${row.id}"
                         style="
                           background: #4361ee;
                           border: 1px solid #3a0ca3;
@@ -919,7 +919,7 @@ const generateHTMLReport = (title, rows) => {
                 <tr>
                   <td align="center">
                     <a 
-                      href="http://localhost:3000/conversation/\${conv.id}"
+                      href="https://db-scan.azurewebsites.net/conversation/\${conv.id}"
                       style="
                         background: #4361ee;
                         border: 1px solid #3a0ca3;
