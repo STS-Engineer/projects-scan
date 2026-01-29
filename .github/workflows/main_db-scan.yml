@@ -27,7 +27,7 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          
+          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -51,9 +51,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_081B7AACA00F4714AA381E72976A4794 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_281B9FFD32284B75B59BB4A38749F595 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F31618380AE049B287DF8D60571803C0 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5CE5E9E210E2448BB7C55A5E73E81E79 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C87E6A2368B04842AFD67FDF69978EBE }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_58F1127CDF2741E596A6099678A52449 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -62,5 +62,4 @@ jobs:
           app-name: 'db-scan'
           slot-name: 'Production'
           package: .
-
           
