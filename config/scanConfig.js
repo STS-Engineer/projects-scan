@@ -5,10 +5,12 @@ module.exports = [
     reportName: 'Customer Interaction  Report',
     recipients: ['mootaz.farwa@avocarbon.com']
   },
+   // Report for Valeo client only
   {
-    db: 'PROJECTS_DB',
-    table: 'projects',
-    reportName: 'AI TEAM PROJECTS',
-    recipients: ['mootaz.farwa@avocarbon.com']
+    db: 'CUSTOMER_INTERACTION',
+    table: 'conversations',
+    reportName: 'Valeo Client Interaction Report',
+    recipients: ['mootaz.farwa@avocarbon.com'],
+    filter: { client_name: 'Valeo' } // filter applied
   }
 ];

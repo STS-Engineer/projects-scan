@@ -1,9 +1,16 @@
 require('dotenv').config();
 const cron = require('node-cron');
 const { runReports } = require('./jobs/report.job');
+const conversationRoutes = require('./routes/conversation.routes');
+const express = require("express");
 
-// Run all reports at 08:00 daily
-cron.schedule('29 08 * * *', async () => {
+const app = express();
+
+// Mount routes
+app.use('/', conversationRoutes);
+
+// Run all reports at 08:56 daily
+cron.schedule('06 12 * * *', async () => {
   console.log('⏰ Scheduled report job started');
 
   try {
@@ -15,6 +22,13 @@ cron.schedule('29 08 * * *', async () => {
 });
 
 console.log('🚀 Report service started (cron mode)');
+
+// ✅ SET PORT HERE
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`🌍 Server running on port ${PORT}`);
+});
 
 process.on('SIGINT', () => {
   console.log('🛑 Shutting down report service...');
