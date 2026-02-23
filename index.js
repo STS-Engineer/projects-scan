@@ -10,7 +10,7 @@ const app = express();
 app.use('/', conversationRoutes);
 
 // Run all reports at 08:56 daily
-cron.schedule('16 09 * * 1', async () => {
+cron.schedule('04 15 * * 1', async () => {
   console.log('⏰ Scheduled report job started');
 
   try {
